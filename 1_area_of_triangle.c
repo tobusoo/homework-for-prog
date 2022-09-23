@@ -14,8 +14,7 @@ int is_true(int side1, int side2, int side3)
 int main()
 {
     int side1, side2, side3;
-    float p;
-    float area;
+    float p, area;
 
     printf("input 3 sides for triangle: ");
     scanf("%d %d %d", &side1, &side2, &side3);
