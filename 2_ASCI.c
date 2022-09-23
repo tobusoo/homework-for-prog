@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int main()
 {
@@ -8,6 +7,5 @@ int main()
     for (i = 0; i <= 127; i++){
         printf("%o\t%d\t%x\t%c\n", i, i, i, i);
     }
-
     return 0;
 }
