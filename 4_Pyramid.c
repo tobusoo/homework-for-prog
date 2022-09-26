@@ -5,8 +5,7 @@ int main()
 {
     char symbol;
     int steps;
-    int smbl;
-    int k;
+    int smbl; //symblols for output
     printf("Lower letter: ");
     scanf("%c", &symbol);
 
@@ -16,13 +15,14 @@ int main()
             for (int j = i; j < steps - 1; j++){
                 printf(" ");
             }
-            for (k = 0; k <= i; k++){
-                smbl = 'A' + k;
-                printf("%c", smbl);
-            }
-            for (;k <= i * 2 ; k++){
-                smbl = smbl - 1;
-                printf("%c", smbl);
+            for (int k = 0; k <= i * 2; k++){
+                if (k <= i){
+                    smbl = 'A' + k;
+                    printf("%c", smbl);
+                } else {
+                    smbl = smbl - 1;
+                    printf("%c", smbl);
+                }
             }
             printf("\n");
         }
