@@ -26,8 +26,7 @@ int main()
             }
             printf("\n");
         }
-    } 
-    else {
+    } else {
         printf("You are wrong!\n");
     }
 
