@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void min_max_elems(int array[], int length, int *min, int *max)
+void min_max_elems(int array[], int length, int* min, int* max)
 {
     for (int i = 0; i < length; i++){
         if (array[i] > *max){
