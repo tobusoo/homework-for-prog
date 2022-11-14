@@ -51,9 +51,13 @@ int main()
     int rows, cols;
     printf("Enter rows and cols number: ");
     scanf("%d %d", &rows, &cols);
-    int array[rows][cols];
-    memset(array, 0, sizeof(array));
-    snake(rows, cols, array);
-    PrintArray(rows, cols, array);
+        if (rows > 0 && cols > 0){
+        int array[rows][cols];
+        memset(array, 0, sizeof(array));
+        snake(rows, cols, array);
+        PrintArray(rows, cols, array);
+    } else{
+        printf("Error: rows and cols mubst be positive numbers\n");
+    }
     return 0;
 }
