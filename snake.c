@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 void PrintArray(int rows, int cols, int array[][cols])
 {
@@ -51,7 +52,7 @@ int main()
     int rows, cols;
     printf("Enter rows and cols number: ");
     scanf("%d %d", &rows, &cols);
-        if (rows > 0 && cols > 0){
+    if (rows > 0 && cols > 0){
         int array[rows][cols];
         memset(array, 0, sizeof(array));
         snake(rows, cols, array);
