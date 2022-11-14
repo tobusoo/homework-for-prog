@@ -2,7 +2,7 @@
 
 void printArr(int array[], int length)
 {
-    printf("Unique: ");
+    printf("Уникальные: ");
     for (int i = 0; i < length; i++){
         printf("%d ", array[i]);    
     }
@@ -18,14 +18,12 @@ int unique_copy(int array[], int length)
         }
     }
     int arr[len];
-    for (int i = 0, k = 0; i <= length; i++, k++){
-        if (array[i] == array[i+1]){
-            i++;
-        } else {
+    for (int i = 0, k = 0; i < length; i++){
+        if (array[i] != array[i-1]){   
             arr[k] = array[i];
+            k++;
         }
     }
-    printf("\n");
     printArr(arr, len);
     return len;
 }
@@ -42,6 +40,6 @@ int main()
         scanf("%d", &array[i]);
     }
     len = unique_copy(array, length);
-    printf("len = %d\n", len);
+    printf("Кол-во элементов = %d\n", len);
     return 0;
 }
