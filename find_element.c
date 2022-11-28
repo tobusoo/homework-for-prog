@@ -22,13 +22,11 @@ int *find_element(int *begin, int *end, int value)
 int main()
 {
     int size, value;
-    int *begin;
     int *end;
     printf("Enter array size: ");
     scanf("%d", &size);
 
     int array[size];
-    begin = array;
     end = array + size;
 
     printf("Enter array elements: ");
@@ -39,10 +37,10 @@ int main()
     printf("Enter element to find: ");
     scanf("%d", &value);
 
-    find_element(begin, end, value);
+    find_element(array, end, value);
 
     printf("\nResult: ");
-    printArray(begin, end);
+    printArray(array, end);
 
     return 0;
 }
