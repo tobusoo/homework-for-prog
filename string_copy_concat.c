@@ -1,7 +1,6 @@
 #include <stdio.h>
 #define MAX_SYMBOLS 50
 
-
 void string_copy(char *out, char *src)
 {
     while (*src != '\0'){
