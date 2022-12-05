@@ -22,6 +22,7 @@ struct Segment find_max_segment(int *begin, int *end)
     float max_r = 0;
     float cur_r = 0;
     struct Segment result;
+
     for (int *i = begin; i < end; i+=2){
         int *k = i + 1;
         for (int *j = i; j < end; j+=2){
@@ -38,6 +39,7 @@ struct Segment find_max_segment(int *begin, int *end)
         }
         k+=2;
     }
+
     printf("Максимальное расстояние между 2 точками: %f\n", max_r);
     return result;
 }
@@ -47,6 +49,7 @@ int main()
     int points;
     printf("Введите кол-во точек: ");
     scanf("%d", &points);
+
     int array_test[points][2];
     for (int i = 0; i < points; i++){
         printf("Введите %d точку (x, y): ", i+1);
@@ -57,7 +60,9 @@ int main()
     int *end = array_test[0] + (points*2);
 
     struct Segment result = find_max_segment(begin, end);
+    
     printf("Точка1 x: %d y: %d\n", *result.m1.x, *result.m1.y);
     printf("Точка2 x: %d y: %d\n", *result.m2.x, *result.m2.y);
+
     return 0;
 }
