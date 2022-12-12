@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#define STARS "**********************************"
 
 struct PlayerScores {
     int Army;
@@ -16,7 +17,7 @@ void printStruct(struct PlayerScores *players, int n)
     }
 }
 
-int buble_sort(struct PlayerScores *players, int n, int sort)
+void buble_sort(struct PlayerScores *players, int n, int sort)
 {
     int army;
     int heroes;
@@ -46,7 +47,6 @@ int buble_sort(struct PlayerScores *players, int n, int sort)
             }
         }
         printStruct(players, n);
-        return 1;
     }
     else if (sort == 3){
         printf("Сортировка по кол-ву ресурсов: \n");
@@ -72,7 +72,6 @@ int buble_sort(struct PlayerScores *players, int n, int sort)
             }
         }
         printStruct(players, n);
-        return 1;
     }
     else if (sort == 2){
         printf("Сортировка по кол-ву героев: \n");
@@ -98,7 +97,6 @@ int buble_sort(struct PlayerScores *players, int n, int sort)
             }
         }
         printStruct(players, n);
-        return 1;
     }
     else if (sort == 1){
         printf("Сортировка по кол-ву армии: \n");
@@ -124,25 +122,27 @@ int buble_sort(struct PlayerScores *players, int n, int sort)
             }
         }
         printStruct(players, n);
-        return 1;
-    }
-    else {
-        printf("Введите число в диапозоне от 1 до 4\n");
-        return 0;
     }
 }
 
 void sort(struct PlayerScores *players, int n)
 {
-    int sort;
-    printf("****СОРТИРОВКА (по убыванию)****\n");
+    int sort = 1;
+    while ((sort > 0 && sort < 5))
+    {
+    printf("*****СОРТИРОВКА (по убыванию)*****\n");
     printf("Веберите сортировку:\n");
     printf("1. Сортировка по кол-ву армии\n");
     printf("2. Сортировка по кол-ву героев\n");
     printf("3. сортировка по кол-ву русурсов\n");
     printf("4. Сортировка по общему счету\n");
+    printf("5. Выход\n");
+    printf("%s\n", STARS);
     scanf("%d", &sort);
+    printf("\n");
     buble_sort(players, n, sort);
+    printf("\n");
+    }
 }
 
 int main()
@@ -153,6 +153,7 @@ int main()
                                     {4324, 432, 3432, 2321},
                                     {43298, 432, 3, 3}};
     int n = sizeof(players)/sizeof(players[0]);
+    printf("%s\n", STARS);
     printStruct(players, n);
     sort(players, n);
     return 0;
