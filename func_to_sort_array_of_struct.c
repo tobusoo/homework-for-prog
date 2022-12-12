@@ -123,6 +123,9 @@ void buble_sort(struct PlayerScores *players, int n, int sort)
         }
         printStruct(players, n);
     }
+    printf("\nВведите любой символ для продолжения...");
+    getchar();
+    getchar();
 }
 
 void sort(struct PlayerScores *players, int n)
@@ -139,6 +142,7 @@ void sort(struct PlayerScores *players, int n)
     printf("5. Выход\n");
     printf("%s\n", STARS);
     scanf("%d", &sort);
+    if (sort > 4) break;
     printf("\n");
     buble_sort(players, n, sort);
     printf("\n");
