@@ -19,10 +19,7 @@ void printStruct(struct PlayerScores *players, int n)
 
 void buble_sort(struct PlayerScores *players, int n, int sort)
 {
-    int army;
-    int heroes;
-    int resources;
-    int score;
+    struct PlayerScores temp;
     if (sort == 4){
         printf("Сортировка по общему счету: \n");
         for (int j = n; j > 1; j--)
@@ -31,18 +28,9 @@ void buble_sort(struct PlayerScores *players, int n, int sort)
             {
                 if (players[i].score < players[i+1].score)
                 {
-                    army = players[i].Army;
-                    heroes = players[i].Heroes;
-                    resources = players[i].resources;
-                    score = players[i].score;
-                    players[i].Army = players[i+1].Army;
-                    players[i].Heroes = players[i+1].Heroes;
-                    players[i].resources = players[i+1].resources;
-                    players[i].score = players[i+1].score;
-                    players[i+1].Army = army;
-                    players[i+1].Heroes = heroes;
-                    players[i+1].resources = resources;
-                    players[i+1].score = score;
+                    temp = players[i];
+                    players[i] = players[i+1];
+                    players[i+1] = temp;
                 }
             }
         }
@@ -56,18 +44,9 @@ void buble_sort(struct PlayerScores *players, int n, int sort)
             {
                 if (players[i].resources < players[i+1].resources)
                 {
-                    army = players[i].Army;
-                    heroes = players[i].Heroes;
-                    resources = players[i].resources;
-                    score = players[i].score;
-                    players[i].Army = players[i+1].Army;
-                    players[i].Heroes = players[i+1].Heroes;
-                    players[i].resources = players[i+1].resources;
-                    players[i].score = players[i+1].score;
-                    players[i+1].Army = army;
-                    players[i+1].Heroes = heroes;
-                    players[i+1].resources = resources;
-                    players[i+1].score = score;
+                    temp = players[i];
+                    players[i] = players[i+1];
+                    players[i+1] = temp;
                 }
             }
         }
@@ -81,18 +60,9 @@ void buble_sort(struct PlayerScores *players, int n, int sort)
             {
                 if (players[i].Heroes < players[i+1].Heroes)
                 {
-                    army = players[i].Army;
-                    heroes = players[i].Heroes;
-                    resources = players[i].resources;
-                    score = players[i].score;
-                    players[i].Army = players[i+1].Army;
-                    players[i].Heroes = players[i+1].Heroes;
-                    players[i].resources = players[i+1].resources;
-                    players[i].score = players[i+1].score;
-                    players[i+1].Army = army;
-                    players[i+1].Heroes = heroes;
-                    players[i+1].resources = resources;
-                    players[i+1].score = score;
+                    temp = players[i];
+                    players[i] = players[i+1];
+                    players[i+1] = temp;
                 }
             }
         }
@@ -106,18 +76,9 @@ void buble_sort(struct PlayerScores *players, int n, int sort)
             {
                 if (players[i].Army < players[i+1].Army)
                 {
-                    army = players[i].Army;
-                    heroes = players[i].Heroes;
-                    resources = players[i].resources;
-                    score = players[i].score;
-                    players[i].Army = players[i+1].Army;
-                    players[i].Heroes = players[i+1].Heroes;
-                    players[i].resources = players[i+1].resources;
-                    players[i].score = players[i+1].score;
-                    players[i+1].Army = army;
-                    players[i+1].Heroes = heroes;
-                    players[i+1].resources = resources;
-                    players[i+1].score = score;
+                    temp = players[i];
+                    players[i] = players[i+1];
+                    players[i+1] = temp;
                 }
             }
         }
